@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Space Chatbot</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;700&family=Smooch+Sans:wght@200;300;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div class="welcome-message">
+<!-- TODO Change the text here -->
+		<h1><span>I</span>n<span>B</span>rief</h1>
+		<h4>FIFTY words snippets</h4>
+
+		<div class="txt">
+			<p>Paste the link or paragraph in the chat after pressing on the icon below </p>
+		</div>
+	</div>
+	<button id="welcome-message" class="chatbot-toggler">
+		<span class="material-symbols-outlined">mode_comment</span>
+		<span class="material-symbols-outlined">close</span>
+	</button>
+	<div class="chatbot">
+		<header>
+			<h2>Chatbot</h2>
+			<span class="close-btn material-symbols-outlined">close</span>
+		</header>
+		<ul class="chatbox">
+			<li class="chat incoming">
+				<span class="material-symbols-outlined">smart_toy</span>
+				<p>Hi there <br> How can I help you today?</p>
+			</li>
+		</ul>
+		<div class="chat-input">
+			<textarea placeholder="Enter a message ..." required></textarea>
+			<span id="send-btn" class="material-symbols-outlined">send</span>
+		</div>
+	</div>
+
+</body>
+</html>
