@@ -2,16 +2,17 @@ const chatInput = document.querySelector(".chat-input textarea");
 const sendChatBtn = document.querySelector(".chat-input span");
 const chatbox = document.querySelector(".chatbox");
 const chatbotToggler = document.querySelector(".chatbot-toggler");
-const chatbotCloseBtn = document.querySelector(".close-btn")
+const chatbotCloseBtn = document.querySelector(".close-btn");
 
+import PRIVATE_KEY from './apikey.js'
 
 let userMessage;
 //Add the API_KEY
-let API_KEY = "TODO";
+let API_KEY = PRIVATE_KEY;
 
 //Use Prompt engineering techniques to assign a role to your GPT and a tone
 //Tell it to act as an expert in the field you decided 
-let role ="TODO ";
+let role = "Text summarizer in about 50 words";
 
 const inputInitHeight = chatInput.scrollHeight;
 
@@ -37,11 +38,11 @@ const generateResponse = (incomingChatLi) => {
 		},
 		body: JSON.stringify({
 			model: "gpt-3.5-turbo",
-			messages: [{role: "user", content: role+userMessage}]
+			messages: [{ role: "user", content: role + userMessage }]
 		})
 	}
 
-	fetch(API_URL, requestOptions).then(res => res.json()).then(data =>{
+	fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
 		messageElement.textContent = data.choices[0].message.content;
 	}).catch((error) => {
 		messageElement.classList.add("error");
@@ -53,7 +54,7 @@ const generateResponse = (incomingChatLi) => {
 
 const handleChat = () => {
 	userMessage = chatInput.value.trim();
-	if(!userMessage) return;
+	if (!userMessage) return;
 	chatInput.value = "";
 	chatInput.style.height = `${inputInitHeight}px`;
 
@@ -76,7 +77,7 @@ chatInput.addEventListener("input", () => {
 
 
 chatInput.addEventListener("keydown", (e) => {
-	if(e.key === "Enter" && !e.shiftKey && window.innerWidth > 800){
+	if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
 		e.preventDefault();
 		handleChat();
 	}
