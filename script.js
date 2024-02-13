@@ -4,10 +4,11 @@ const chatbox = document.querySelector(".chatbox");
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const chatbotCloseBtn = document.querySelector(".close-btn");
 
+import PRIVATE_KEY from './apikey.js'
 
 let userMessage;
 //Add the API_KEY
-let API_KEY = "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";
+let API_KEY = PRIVATE_KEY;
 
 //Use Prompt engineering techniques to assign a role to your GPT and a tone
 //Tell it to act as an expert in the field you decided 
