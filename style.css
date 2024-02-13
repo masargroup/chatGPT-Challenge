@@ -1,15 +1,15 @@
-@import url('https: //fonts.googleapis.com/css2?family=Poppins: wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: "Cairo", "Smooch Sans","Poppins";
+	font-family: "Lora", serif;
 }
 
 body {
 	/* TODO "Change Background" */
-	background-image: url('static/MasarBackground.png');
+	background-image: url('static/text.jpg');
 }
 
 .welcome-message {
@@ -18,13 +18,16 @@ body {
 }
 
 .welcome-message h1 {
-	color: #4AA3B0;
+	color: white;
 	font-weight: 800;
 	font-size: 60px;
 }
+.welcome-message h1 span {
+	color: rgb(150, 150, 150);
+}
 
 .welcome-message h4 {
-	color: #4AA3B0;
+	color: white;
 	font-size: 18px;
 	padding-bottom: 30px;
 }
@@ -33,22 +36,13 @@ body {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px 15px;
-	border: 1px solid #4AA3B0;
+	border: 1px solid white;
 	border-radius: 20px;
 }
 
 .txt p {
 	text-align: center;
-	color: #4AA3B0;
-}
-
-.back-video {
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
+	color: white;
 }
 
 .chatbot-toggler {
@@ -64,7 +58,7 @@ body {
 	justify-content: center;
 	outline: none;
 	cursor: pointer;
-	background: rgb(31, 64, 96);
+	background: black;
 	border-radius: 50%;
 	transition: all 0.1s ease;
 }
@@ -93,7 +87,7 @@ body {
 	top: 10%;
 	left: 16%;
 	width: 900px;
-	height: 700px;
+	height: 500px;
 	transform: scale(0.5);
 	opacity: 0;
 	pointer-events: none;
@@ -112,14 +106,14 @@ body {
 }
 
 .chatbot header {
-	background: rgb(31, 64, 96);
+	background: white;
 	padding: 16px 0;
 	text-align: center;
 	position: relative;
 }
 
 .chatbot header h2 {
-	color: #fff;
+	color: black;
 	font-size: 1.4rem;
 }
 
@@ -189,7 +183,7 @@ body {
 	gap: 5px;
 	background: rgb(26, 26, 26);
 	padding: 5px 20px;
-	border-top: 1px solid rgb(31, 64, 96);
+	border-top: 1px solid black;
 }
 
 .chat-input textarea {
@@ -229,18 +223,7 @@ body {
 	}
 }
 
-@media (min-aspect-ratio: 16/9){
-	.back-video: {
-		width: 100%;
-		height: auto;
-	}
-}
-
 @media (max-aspect-ratio: 16/9){
-	.back-video: {
-		width: auto;
-		height: 100%;
-	}
 	.chatbot {
 		width: 70%;
 		height: 78%;
