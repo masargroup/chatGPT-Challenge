@@ -9,37 +9,37 @@
 
 body {
 	/* TODO "Change Background" */
-	background-image: url('static/MasarBackground.png');
+	background-image: url('static/Background.png');
 }
 
 .welcome-message {
-	padding-top: 100px;
+	padding-top: 70px;
 	text-align: center;
 }
 
 .welcome-message h1 {
-	color: #4AA3B0;
+	color: #ffffff;
 	font-weight: 800;
 	font-size: 60px;
 }
 
 .welcome-message h4 {
-	color: #4AA3B0;
+	color: #ffffff;
 	font-size: 18px;
-	padding-bottom: 30px;
+	padding-bottom: 14px;
 }
 
 .welcome-message .txt {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px 15px;
-	border: 1px solid #4AA3B0;
+	border: 1px solid #ffffff;
 	border-radius: 20px;
 }
 
 .txt p {
 	text-align: center;
-	color: #4AA3B0;
+	color: #ffffff;
 }
 
 .back-video {
@@ -64,7 +64,7 @@ body {
 	justify-content: center;
 	outline: none;
 	cursor: pointer;
-	background: rgb(31, 64, 96);
+	background: #303030;
 	border-radius: 50%;
 	transition: all 0.1s ease;
 }
@@ -92,15 +92,15 @@ body {
 	justify-content: center;
 	top: 10%;
 	left: 16%;
-	width: 900px;
-	height: 700px;
+	width: 500px;
+	height: 500px;
 	transform: scale(0.5);
 	opacity: 0;
 	pointer-events: none;
 	overflow: hidden;
-	background: rgb(26, 26, 26);
+	background: #303030;
 	border-radius: 15px;
-	box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1),
+	box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.5),
 				0 32px 64px -48px rgba(0,0,0,0.5);
 	transition: all 0.1s ease;
 }
@@ -112,8 +112,8 @@ body {
 }
 
 .chatbot header {
-	background: rgb(31, 64, 96);
-	padding: 16px 0;
+	background: #303030;
+	padding: 10px 0;
 	text-align: center;
 	position: relative;
 }
@@ -164,9 +164,9 @@ body {
 }
 
 .chatbox .incoming p {
-	color: #fff;
+	color:  rgb(13, 13, 13);
 	border-radius: 10px 10px 10px 0;
-	background: rgb(13, 13, 13);
+	background: #fff;
 }
 
 .chatbox .incoming span {
@@ -174,7 +174,7 @@ body {
 	width: 32px;
 	color: #fff;
 	align-self: flex-end;
-	background: rgb(31, 64, 96, 0.9);
+	background: #303030;
 	text-align: center;
 	line-height: 32px;
 	border-radius: 4px;
@@ -187,13 +187,13 @@ body {
 	width: 100%;
 	display: flex;
 	gap: 5px;
-	background: rgb(26, 26, 26);
+	background:#303030;
 	padding: 5px 20px;
 	border-top: 1px solid rgb(31, 64, 96);
 }
 
 .chat-input textarea {
-	height: 55px;
+	height: 45px;
 	width: 100%;
 	border: none;
 	outline: none;
@@ -201,7 +201,7 @@ body {
 	font-size: 0.95rem;
 	resize: none;
 	padding:  16px 15px 16px 0;
-	background: rgb(26, 26, 26);
+	background: #303030;
 	color: #fff;
 }
 
@@ -226,23 +226,5 @@ body {
 	}
 	.chatbot header span {
 		display: block;
-	}
-}
-
-@media (min-aspect-ratio: 16/9){
-	.back-video: {
-		width: 100%;
-		height: auto;
-	}
-}
-
-@media (max-aspect-ratio: 16/9){
-	.back-video: {
-		width: auto;
-		height: 100%;
-	}
-	.chatbot {
-		width: 70%;
-		height: 78%;
 	}
 }
