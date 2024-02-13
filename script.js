@@ -7,18 +7,18 @@ const chatbotCloseBtn = document.querySelector(".close-btn")
 
 let userMessage;
 //Add the API_KEY
-let API_KEY = "TODO";
+let API_KEY = config.OPENAI_API_KEY;
 
 //Use Prompt engineering techniques to assign a role to your GPT and a tone
 //Tell it to act as an expert in the field you decided 
-let role ="TODO ";
+let role =" قصة من ألف ليلة وليلة";
 
 const inputInitHeight = chatInput.scrollHeight;
 
 const createChatLi = (message, className) => {
 	const chatLi = document.createElement("li");
 	chatLi.classList.add("chat", className);
-	let chatContent = className === "outgoing" ? `<p></p>` : `<span class="material-symbols-outlined">smart_toy</span><p></p>`;
+	let chatContent = className === "outgoing" ? `<p></p>` : `<p></p>`;
 	chatLi.innerHTML = chatContent;
 	chatLi.querySelector("p").textContent = message;
 	return chatLi;
@@ -33,40 +33,54 @@ const generateResponse = (incomingChatLi) => {
 		method: "POST",
 		headers: {
 			"content-Type": "application/json",
-			"Authorization": `Bearer ${API_KEY}`
+			Authorization: `Bearer ${API_KEY}`
 		},
 		body: JSON.stringify({
 			model: "gpt-3.5-turbo",
-			messages: [{role: "user", content: role+userMessage}]
+			messages: [{role: "user", content: role}],
+			temperature: 0.7,
 		})
 	}
 
 	fetch(API_URL, requestOptions).then(res => res.json()).then(data =>{
 		messageElement.textContent = data.choices[0].message.content;
+	
 	}).catch((error) => {
 		messageElement.classList.add("error");
+		console.log(error);
 		messageElement.textContent = "Ooops! something went wrong. Please try again.";
 	}).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
 }
 
-
-
 const handleChat = () => {
-	userMessage = chatInput.value.trim();
-	if(!userMessage) return;
-	chatInput.value = "";
-	chatInput.style.height = `${inputInitHeight}px`;
+    userMessage = chatInput.value.trim();
+    if (!userMessage) return;
+    chatInput.value = "";
+    chatInput.style.height = `${inputInitHeight}px`;
 
-	chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-	chatbox.scrollTo(0, chatbox.scrollHeight);
+    // Get the previous incoming message
+    const previousIncomingMessage = chatbox.querySelector(".chat.incoming");
+    // const previousoutgoingMessage = chatbox.querySelector(".chat.outgoing");
 
-	setTimeout(() => {
-		const incomingChatLi = createChatLi("Thinking...", "incoming");
-		chatbox.appendChild(incomingChatLi);
-		chatbox.scrollTo(0, chatbox.scrollHeight);
-		generateResponse(incomingChatLi);
-	}, 600);
+    chatbox.appendChild(createChatLi(userMessage, "outgoing"));
+    chatbox.scrollTo(0, chatbox.scrollHeight);
+
+    setTimeout(() => {
+        const incomingChatLi = createChatLi("...", "incoming");
+        chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
+
+        // Hide the previous incoming message if there is a new incoming message
+        if (previousIncomingMessage) {
+            previousIncomingMessage.style.visibility = "hidden";
+            previousIncomingMessage.style.height = "0px";
+			// previousoutgoingMessage.style.visibility = "hidden";
+        }
+
+        generateResponse(incomingChatLi);
+    }, 600);
 }
+
 
 
 chatInput.addEventListener("input", () => {
@@ -82,7 +96,6 @@ chatInput.addEventListener("keydown", (e) => {
 	}
 })
 
-sendChatBtn.addEventListener("click", handleChat);
-chatbotCloseBtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
-chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
+// sendChatBtn.addEventListener("click", handleChat);
+// chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 
