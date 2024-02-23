@@ -9,22 +9,24 @@
 
 body {
 	/* TODO "Change Background" */
-	background-image: url('static/MasarBackground.png');
+	background-image: url('static/law.jpg');
+	background-repeat:no-repeat ;
+
 }
 
 .welcome-message {
-	padding-top: 100px;
+	padding-top: 250px;
 	text-align: center;
 }
 
 .welcome-message h1 {
-	color: #4AA3B0;
+	color: #c6cf9d;
 	font-weight: 800;
 	font-size: 60px;
 }
 
 .welcome-message h4 {
-	color: #4AA3B0;
+	color: #c6cf9d;
 	font-size: 18px;
 	padding-bottom: 30px;
 }
@@ -33,13 +35,13 @@ body {
 	display: inline-block;
 	text-decoration: none;
 	padding: 10px 15px;
-	border: 1px solid #4AA3B0;
+	border: 1px solid #cecf91;
 	border-radius: 20px;
 }
 
 .txt p {
 	text-align: center;
-	color: #4AA3B0;
+	color: #c6cf9d;
 }
 
 .back-video {
@@ -57,14 +59,14 @@ body {
 	bottom: 35px;
 	height: 50px;
 	width: 50px;
-	color: #fff;
+	color: #4e3619;
 	border: none;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	outline: none;
 	cursor: pointer;
-	background: rgb(31, 64, 96);
+	background: rgb(199, 184, 99);
 	border-radius: 50%;
 	transition: all 0.1s ease;
 }
@@ -93,7 +95,7 @@ body {
 	top: 10%;
 	left: 16%;
 	width: 900px;
-	height: 700px;
+	height: 500px;
 	transform: scale(0.5);
 	opacity: 0;
 	pointer-events: none;
@@ -112,7 +114,7 @@ body {
 }
 
 .chatbot header {
-	background: rgb(31, 64, 96);
+	background: rgb(155, 134, 107);
 	padding: 16px 0;
 	text-align: center;
 	position: relative;
@@ -134,9 +136,9 @@ body {
 }
 
 .chatbot .chatbox {
-	height: 510px;
+	height: 100px;
 	overflow-y: auto;
-	padding: 30px 20px 100px;
+	padding: 30px 20px 2000px;
 }
 
 .chatbox .chat {
@@ -146,6 +148,7 @@ body {
 .chatbox .outgoing {
 	margin: 20px 0;
 	justify-content: flex-end;
+
 }
 
 .chatbox .chat p {
@@ -174,7 +177,7 @@ body {
 	width: 32px;
 	color: #fff;
 	align-self: flex-end;
-	background: rgb(31, 64, 96, 0.9);
+	background: rgba(104, 89, 79, 0.9);
 	text-align: center;
 	line-height: 32px;
 	border-radius: 4px;
@@ -230,7 +233,7 @@ body {
 }
 
 @media (min-aspect-ratio: 16/9){
-	.back-video: {
+	 .back-video: {
 		width: 100%;
 		height: auto;
 	}
