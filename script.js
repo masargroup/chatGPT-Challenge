@@ -7,11 +7,12 @@ const chatbotCloseBtn = document.querySelector(".close-btn")
 
 let userMessage;
 //Add the API_KEY
-let API_KEY = "TODO";
+let API_KEY ="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";
 
 //Use Prompt engineering techniques to assign a role to your GPT and a tone
 //Tell it to act as an expert in the field you decided 
-let role ="TODO ";
+let role ="Act as lawyer ,provide solutions  to user ";
+
 
 const inputInitHeight = chatInput.scrollHeight;
 
